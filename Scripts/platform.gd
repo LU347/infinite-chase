@@ -1,7 +1,6 @@
 extends Node2D
 
 const VELOCITY: float = -1.2
-var g_texture_width: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,9 +13,10 @@ func _process(delta: float) -> void:
 			continue
 		_move_sprite(child, delta)
 
-func _move_sprite(sprite: Sprite2D, delta: float) -> void:
-	var texture_width = sprite.texture.get_size().x * sprite.scale.x
+func _move_sprite(sprite: Sprite2D, _delta: float) -> void:
+	#var texture_width = sprite.texture.get_size().x * sprite.scale.x
+	var platform = sprite.get_node("PlatformTip")
 	sprite.position.x += VELOCITY
 
-	if sprite.position.x <= $End.position.x:
-		sprite.position.x = $Start.position.x
+	if platform.global_position.x <= $EndPosition.global_position.x:
+		sprite.position.x = $SpawnPosition.position.x
