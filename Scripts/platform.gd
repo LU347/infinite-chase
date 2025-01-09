@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var obstacle_scene: PackedScene
+
 const VELOCITY: float = -1.2
 
 # Called when the node enters the scene tree for the first time.

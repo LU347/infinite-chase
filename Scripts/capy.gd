@@ -5,7 +5,7 @@ signal hit
 var speed = 400
 var screen_size: Vector2
 var velocity = Vector2.ZERO
-var floor_y = 405
+var floor_y = 420
 
 # Constants for jumping mechanics
 const PLAYER_GRAVITY = 1500 # Adjust this value as needed for more realistic gravity
@@ -61,7 +61,6 @@ func _physics_process(delta: float) -> void:
 	
 	$AnimatedSprite2D.play()
 
-# Called when the Area2D body enters this Area2D
 func _on_body_entered(_body: Node2D) -> void:
 	hide()
 	hit.emit()

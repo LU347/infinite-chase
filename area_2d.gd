@@ -1,15 +1,15 @@
-extends RigidBody2D
+extends Area2D
 
-@export var VELOCITY: float = -100
-
-#TODO:
-# fix velocity since it's not static.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    linear_velocity = Vector2(VELOCITY, 0)  # Set the velocity in the x-axis
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    pass
+	pass
 
+
+func _on_body_entered(body:Node2D) -> void:
+	body.queue_free()

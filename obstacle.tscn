@@ -19,6 +19,8 @@ scale = Vector2(1, 1.13388)
 shape = SubResource("RectangleShape2D_l1tia")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(2.3, 4.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
