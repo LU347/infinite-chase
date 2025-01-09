@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bsfmlosvitsc6"]
+[gd_scene load_steps=9 format=4 uid="uid://bsfmlosvitsc6"]
 
 [ext_resource type="PackedScene" uid="uid://1ab614obq2t2" path="res://capy.tscn" id="1_jtlg3"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_rxmq3"]
 [ext_resource type="Script" path="res://Scripts/platform.gd" id="3_a668m"]
 [ext_resource type="Texture2D" uid="uid://u5e0or4ikxk3" path="res://Spritesheets/tileset.png" id="4_704dl"]
+[ext_resource type="PackedScene" uid="uid://bjpki44xtcce4" path="res://obstacle.tscn" id="5_yhux1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pyl34"]
 
@@ -79,3 +80,7 @@ position = Vector2(1887, 0)
 
 [node name="EndPosition" type="Marker2D" parent="Platform"]
 position = Vector2(-33, 0)
+
+[node name="Obstacle" parent="." instance=ExtResource("5_yhux1")]
+position = Vector2(628, 390)
+scale = Vector2(3.57, 3.57)
