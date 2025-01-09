@@ -8,7 +8,7 @@ var velocity = Vector2.ZERO
 var floor_y = 405
 
 # Constants for jumping mechanics
-const PLAYER_GRAVITY = 1000  # Adjust this value as needed for more realistic gravity
+const PLAYER_GRAVITY = 1500 # Adjust this value as needed for more realistic gravity
 const JUMP_STRENGTH = -600.0    # Adjust for stronger or weaker jumps
 const MAX_SPEED = 200.0
 
