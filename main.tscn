@@ -28,7 +28,7 @@ script = ExtResource("6_kqvcm")
 obstacle_scene = ExtResource("5_yhux1")
 
 [node name="SpawnTimer" type="Timer" parent="ObstacleSpawner"]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1920, 449)
