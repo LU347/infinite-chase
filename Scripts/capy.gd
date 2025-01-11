@@ -35,14 +35,12 @@ func _physics_process(delta: float) -> void:
 
 	# Floor collision logic
 	if position.y >= floor_y:
-		print(position.y)
 		position.y = floor_y
 		velocity.y = 0
 		is_on_floor = true
 	
 	# Handle jumping
 	if Input.is_action_pressed("jump") and is_on_floor:
-		print("Jump!")
 		velocity.y = JUMP_STRENGTH 
 		is_on_floor = false
 	

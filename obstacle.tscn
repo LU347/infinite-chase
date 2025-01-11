@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjpki44xtcce4"]
 
-[ext_resource type="Script" path="res://obstacle.gd" id="1_ic4qf"]
+[ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_pi5lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1tia"]
 size = Vector2(46, 74.9637)
@@ -11,7 +11,7 @@ load_path = "res://.godot/imported/spikes-export.png-19cdeede6a9e11c0aae7ef9c151
 [node name="Obstacle" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_ic4qf")
+script = ExtResource("1_pi5lh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
