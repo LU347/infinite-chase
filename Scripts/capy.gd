@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jumping
 	if Input.is_action_pressed("jump") and is_on_floor:
+		$SoundManager.play_sound("jump")
 		velocity.y = JUMP_STRENGTH 
 		is_on_floor = false
 	
@@ -59,7 +60,10 @@ func _physics_process(delta: float) -> void:
 	
 	$AnimatedSprite2D.play()
 
+#TODO: Implement health system
+# Player collides with an obstacle
 func _on_body_entered(_body: Node2D) -> void:
+	$SoundManager.play_sound("damage")
 	hide()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)

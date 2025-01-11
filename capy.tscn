@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://1ab614obq2t2"]
+[gd_scene load_steps=19 format=3 uid="uid://1ab614obq2t2"]
 
 [ext_resource type="Script" path="res://Scripts/capy.gd" id="1_w0a2v"]
 [ext_resource type="Texture2D" uid="uid://bqph1fcp2nxpi" path="res://Spritesheets/capy_idle.png" id="2_4gt81"]
 [ext_resource type="Texture2D" uid="uid://bfv57pq1h3m7c" path="res://Spritesheets/capy_run-2-sheet.png" id="3_f6crk"]
+[ext_resource type="PackedScene" uid="uid://dt0maksfuhyby" path="res://sound_manager.tscn" id="6_kxrwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kdsj"]
 atlas = ExtResource("3_f6crk")
@@ -125,5 +126,7 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1ncfh")
+
+[node name="SoundManager" parent="." instance=ExtResource("6_kxrwh")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
