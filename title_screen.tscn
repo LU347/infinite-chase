@@ -1,6 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://d302d853vjtdc"]
+[gd_scene load_steps=15 format=3 uid="uid://d302d853vjtdc"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_ps2k5"]
+[ext_resource type="PackedScene" uid="uid://dup4yhwe2flqp" path="res://platform.tscn" id="3_efqtc"]
+[ext_resource type="Texture2D" uid="uid://debso01fuxgnk" path="res://Assets/HUD/woodenSignNoLight.png" id="3_ibb8b"]
+[ext_resource type="Texture2D" uid="uid://bfv57pq1h3m7c" path="res://Spritesheets/capy_run-2-sheet.png" id="4_cj2jm"]
+[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="5_wqfut"]
+[ext_resource type="Texture2D" uid="uid://crehd7ycfsmw2" path="res://Assets/HUD/woodenSignHover.png" id="7_4ui64"]
+[ext_resource type="FontFile" uid="uid://ckpkcjtfu35nc" path="res://Assets/HUD/joystix monospace.otf" id="9_xyc6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tl00"]
+atlas = ExtResource("4_cj2jm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ivpw"]
+atlas = ExtResource("4_cj2jm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs57h"]
+atlas = ExtResource("4_cj2jm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um687"]
+atlas = ExtResource("4_cj2jm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h5xg"]
+atlas = ExtResource("4_cj2jm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dttho"]
+atlas = ExtResource("4_cj2jm")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47125"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tl00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ivpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs57h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um687")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h5xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dttho")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -11,36 +67,137 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ps2k5")
 
-[node name="StartButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Start"
+[node name="Platform" parent="." instance=ExtResource("3_efqtc")]
+VELOCITY = -0.5
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = 41.0
-offset_right = 23.0
-offset_bottom = 72.0
+offset_left = -225.0
+offset_top = -145.0
+offset_right = 471.0
+offset_bottom = -73.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.640002, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_xyc6w")
+theme_override_font_sizes/font_size = 60
+text = "Infinite Chase"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(162, 422)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_47125")
+animation = &"walk"
+frame_progress = 0.248967
+script = ExtResource("5_wqfut")
+
+[node name="LoginButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -28.0
+offset_right = 47.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ibb8b")
+texture_hover = ExtResource("7_4ui64")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LoginButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 85.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0.294118, 0.0980392, 0, 0.447059)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("9_xyc6w")
+theme_override_font_sizes/normal_font_size = 14
+text = "Log-in"
+fit_content = true
+
+[node name="StartButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 19.0
+offset_right = 47.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ibb8b")
+texture_hover = ExtResource("7_4ui64")
+stretch_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="StartButton"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 6.0
+offset_right = 84.0
+offset_bottom = 23.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0.294118, 0.0980392, 0, 0.447059)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("9_xyc6w")
+theme_override_font_sizes/normal_font_size = 14
+text = "Start
+"
+fit_content = true
+
+[node name="QuitButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = 63.0
+offset_right = 47.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ibb8b")
+texture_hover = ExtResource("7_4ui64")
+stretch_mode = 0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="QuitButton"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 6.0
+offset_right = 75.0
+offset_bottom = 25.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0.294118, 0.0980392, 0, 0.447059)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("9_xyc6w")
+theme_override_font_sizes/normal_font_size = 14
 text = "Quit
 "
+fit_content = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

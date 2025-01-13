@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beheonlpclkua"
-path="res://.godot/imported/flowers.png-2e1326d48cab5c9ff886483b40c1d43e.ctex"
+uid="uid://1gswwpsapocg"
+path="res://.godot/imported/spikes-export.png-f72904ab64d5d82a8e96f4c88bd1a6a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/flowers.png"
-dest_files=["res://.godot/imported/flowers.png-2e1326d48cab5c9ff886483b40c1d43e.ctex"]
+source_file="res://Assets/Obstacles/spikes-export.png"
+dest_files=["res://.godot/imported/spikes-export.png-f72904ab64d5d82a8e96f4c88bd1a6a4.ctex"]
 
 [params]
 

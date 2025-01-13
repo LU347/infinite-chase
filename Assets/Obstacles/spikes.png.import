@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2hyocd6lgn7c"
-path="res://.godot/imported/tree.png-f0858fcddf0a23aa79accde76137cff6.ctex"
+uid="uid://dk5udiahj3wix"
+path="res://.godot/imported/spikes.png-bce87f5cdf65acd8482872dd5d978031.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tree.png"
-dest_files=["res://.godot/imported/tree.png-f0858fcddf0a23aa79accde76137cff6.ctex"]
+source_file="res://Assets/Obstacles/spikes.png"
+dest_files=["res://.godot/imported/spikes.png-bce87f5cdf65acd8482872dd5d978031.ctex"]
 
 [params]
 

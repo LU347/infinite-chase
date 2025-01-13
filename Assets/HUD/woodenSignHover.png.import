@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1gswwpsapocg"
-path="res://.godot/imported/spikes-export.png-19cdeede6a9e11c0aae7ef9c1512dff9.ctex"
+uid="uid://crehd7ycfsmw2"
+path="res://.godot/imported/woodenSignHover.png-a0696f99585f3700b3dcb6aa0ac2caa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/spikes-export.png"
-dest_files=["res://.godot/imported/spikes-export.png-19cdeede6a9e11c0aae7ef9c1512dff9.ctex"]
+source_file="res://Assets/HUD/woodenSignHover.png"
+dest_files=["res://.godot/imported/woodenSignHover.png-a0696f99585f3700b3dcb6aa0ac2caa8.ctex"]
 
 [params]
 

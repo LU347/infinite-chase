@@ -1,10 +1,10 @@
 extends Node2D
 
-var score
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$ScoreTimer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -20,7 +20,6 @@ func new_game():
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready!")
 	$Capy.start($SpawnLocation.position)
-	$ScoreTimer.start()
 	#TODO: Start obstacle spawner
 
 func _on_score_timer_timeout() -> void:

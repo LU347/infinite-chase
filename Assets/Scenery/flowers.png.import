@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crkb36gt47t3k"
-path="res://.godot/imported/TreeNumberTwo_1.png-97badfc6a428d60783c8c3360d7b2a1c.ctex"
+uid="uid://beheonlpclkua"
+path="res://.godot/imported/flowers.png-058cf43a35da5c790dc23498c315736a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TreeNumberTwo_1.png"
-dest_files=["res://.godot/imported/TreeNumberTwo_1.png-97badfc6a428d60783c8c3360d7b2a1c.ctex"]
+source_file="res://Assets/Scenery/flowers.png"
+dest_files=["res://.godot/imported/flowers.png-058cf43a35da5c790dc23498c315736a.ctex"]
 
 [params]
 
