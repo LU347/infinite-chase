@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dup4yhwe2flqp"]
+[gd_scene load_steps=9 format=4 uid="uid://dup4yhwe2flqp"]
 
 [ext_resource type="Script" path="res://Scripts/platform.gd" id="1_p36c4"]
 [ext_resource type="PackedScene" uid="uid://bjpki44xtcce4" path="res://obstacle.tscn" id="2_rfuc3"]
 [ext_resource type="Texture2D" uid="uid://nvgh3jj5qaau" path="res://Assets/TreeLessObvious.png" id="2_xk1oi"]
 [ext_resource type="Texture2D" uid="uid://c4cygj0c4vhim" path="res://Tilesheets/tileset-export.png" id="3_hunr7"]
+[ext_resource type="Texture2D" uid="uid://crkb36gt47t3k" path="res://Assets/TreeNumberTwo_1.png" id="5_3auau"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_25uky"]
 texture = ExtResource("3_hunr7")
@@ -58,6 +59,12 @@ texture_filter = 1
 position = Vector2(0.435417, -1.53641)
 scale = Vector2(0.0029375, 0.0860388)
 texture = ExtResource("2_xk1oi")
+
+[node name="Tree4" type="Sprite2D" parent="Sprite"]
+texture_filter = 1
+position = Vector2(-0.0442708, -1.89713)
+scale = Vector2(0.0029375, 0.0860388)
+texture = ExtResource("5_3auau")
 
 [node name="Sprite2" type="Sprite2D" parent="."]
 position = Vector2(2861, 34)
