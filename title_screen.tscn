@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d302d853vjtdc"]
+[gd_scene load_steps=16 format=3 uid="uid://d302d853vjtdc"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_ps2k5"]
 [ext_resource type="PackedScene" uid="uid://dup4yhwe2flqp" path="res://platform.tscn" id="3_efqtc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bfv57pq1h3m7c" path="res://Spritesheets/capy_run-2-sheet.png" id="4_cj2jm"]
 [ext_resource type="Script" path="res://animated_sprite_2d.gd" id="5_wqfut"]
 [ext_resource type="Texture2D" uid="uid://crehd7ycfsmw2" path="res://Assets/HUD/woodenSignHover.png" id="7_4ui64"]
+[ext_resource type="PackedScene" uid="uid://dt0maksfuhyby" path="res://sound_manager.tscn" id="8_rpj1r"]
 [ext_resource type="FontFile" uid="uid://ckpkcjtfu35nc" path="res://Assets/HUD/joystix monospace.otf" id="9_xyc6w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tl00"]
@@ -198,6 +199,8 @@ theme_override_font_sizes/normal_font_size = 14
 text = "Quit
 "
 fit_content = true
+
+[node name="SoundManager" parent="." instance=ExtResource("8_rpj1r")]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

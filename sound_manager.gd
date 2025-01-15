@@ -6,7 +6,9 @@ var sound_dict = {}
 func _ready() -> void:
 	sound_dict = {
 		"jump": $JumpSound,
-		"damage": $DamageSound
+		"damage": $DamageSound,
+		"title": $TitleMusic,
+		"game": $BackgroundMusic
 	}
 
 func play_sound(sound_name):
