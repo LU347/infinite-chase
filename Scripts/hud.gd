@@ -19,6 +19,12 @@ func show_message(text):
 	$Message.show()
 	$MessageTimer.start()
 
+func print_countdown():
+	var start_message = ["3", "2", "1", "Go!"]
+	for message in start_message:
+		await get_tree().create_timer(1.0).timeout
+		show_message(message)
+
 #Called when the player loses
 #TODO: Return to title scene
 func show_game_over():

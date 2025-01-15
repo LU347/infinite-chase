@@ -2,10 +2,6 @@ extends Node2D
 
 @export var obstacle_scene: PackedScene
 
-func _ready() -> void:
-	# Start the spawn timer
-	$SpawnTimer.start()
-
 #TODO:
 # Make obstacle move with platform
 
@@ -19,3 +15,6 @@ func _on_spawn_timer_timeout() -> void:
 	
 	# Add obstacle to the scene tree
 	add_child(obstacle)
+
+func _on_main_start_game_objects() -> void:
+	$SpawnTimer.start()
