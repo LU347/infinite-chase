@@ -1,19 +1,19 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsfmlosvitsc6"]
 
-[ext_resource type="PackedScene" uid="uid://1ab614obq2t2" path="res://capy.tscn" id="1_jtlg3"]
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_rxmq3"]
-[ext_resource type="PackedScene" uid="uid://dup4yhwe2flqp" path="res://platform.tscn" id="3_c3pmy"]
-[ext_resource type="Script" path="res://Scripts/obstacle_spawner.gd" id="4_ftv6q"]
-[ext_resource type="PackedScene" uid="uid://bjpki44xtcce4" path="res://obstacle.tscn" id="5_yhux1"]
-[ext_resource type="Script" path="res://area_2d.gd" id="6_cx3ba"]
-[ext_resource type="PackedScene" uid="uid://d0kchyh566ct" path="res://hud.tscn" id="7_ah4xo"]
-[ext_resource type="PackedScene" uid="uid://dt0maksfuhyby" path="res://sound_manager.tscn" id="8_gtfxd"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_iogwh"]
+[ext_resource type="PackedScene" uid="uid://dup4yhwe2flqp" path="res://Scenes/platform.tscn" id="2_18mtu"]
+[ext_resource type="PackedScene" uid="uid://1ab614obq2t2" path="res://Scenes/capy.tscn" id="3_rb03k"]
+[ext_resource type="Script" path="res://Scripts/obstacle_spawner.gd" id="4_7w45q"]
+[ext_resource type="PackedScene" uid="uid://bjpki44xtcce4" path="res://Scenes/obstacle.tscn" id="5_afkm4"]
+[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="6_hjrrf"]
+[ext_resource type="PackedScene" uid="uid://d0kchyh566ct" path="res://Scenes/hud.tscn" id="7_brqk0"]
+[ext_resource type="PackedScene" uid="uid://dt0maksfuhyby" path="res://Scenes/sound_manager.tscn" id="8_lktrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6sll"]
 size = Vector2(56, 478)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_rxmq3")
+script = ExtResource("1_iogwh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 40.0
@@ -21,9 +21,9 @@ offset_bottom = 40.0
 scale = Vector2(47.96, 11.76)
 color = Color(0.551133, 0.874421, 0.948408, 1)
 
-[node name="Platform" parent="." instance=ExtResource("3_c3pmy")]
+[node name="Platform" parent="." instance=ExtResource("2_18mtu")]
 
-[node name="Capy" parent="." instance=ExtResource("1_jtlg3")]
+[node name="Capy" parent="." instance=ExtResource("3_rb03k")]
 position = Vector2(265, 405)
 scale = Vector2(6, 6)
 
@@ -32,8 +32,8 @@ position = Vector2(217, 420)
 
 [node name="ObstacleSpawner" type="Node2D" parent="."]
 position = Vector2(951, 424)
-script = ExtResource("4_ftv6q")
-obstacle_scene = ExtResource("5_yhux1")
+script = ExtResource("4_7w45q")
+obstacle_scene = ExtResource("5_afkm4")
 
 [node name="SpawnTimer" type="Timer" parent="ObstacleSpawner"]
 wait_time = 3.0
@@ -42,7 +42,7 @@ wait_time = 3.0
 position = Vector2(1920, 449)
 
 [node name="GarbadeCollector" type="Area2D" parent="."]
-script = ExtResource("6_cx3ba")
+script = ExtResource("6_hjrrf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GarbadeCollector"]
 position = Vector2(-37, 236)
@@ -50,9 +50,9 @@ shape = SubResource("RectangleShape2D_h6sll")
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
-[node name="HUD" parent="." instance=ExtResource("7_ah4xo")]
+[node name="HUD" parent="." instance=ExtResource("7_brqk0")]
 
-[node name="SoundManager" parent="." instance=ExtResource("8_gtfxd")]
+[node name="SoundManager" parent="." instance=ExtResource("8_lktrt")]
 
 [connection signal="hit" from="Capy" to="." method="game_over"]
 [connection signal="timeout" from="ObstacleSpawner/SpawnTimer" to="ObstacleSpawner" method="_on_spawn_timer_timeout"]

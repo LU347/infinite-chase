@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/capy.gd" id="1_w0a2v"]
 [ext_resource type="Texture2D" uid="uid://bqph1fcp2nxpi" path="res://Spritesheets/capy_idle.png" id="2_4gt81"]
 [ext_resource type="Texture2D" uid="uid://bfv57pq1h3m7c" path="res://Spritesheets/capy_run-2-sheet.png" id="3_f6crk"]
-[ext_resource type="PackedScene" uid="uid://dt0maksfuhyby" path="res://sound_manager.tscn" id="6_kxrwh"]
+[ext_resource type="PackedScene" uid="uid://dt0maksfuhyby" path="res://Scenes/sound_manager.tscn" id="6_kxrwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kdsj"]
 atlas = ExtResource("3_f6crk")

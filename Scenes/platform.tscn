@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://dup4yhwe2flqp"]
 
 [ext_resource type="Script" path="res://Scripts/platform.gd" id="1_p36c4"]
-[ext_resource type="PackedScene" uid="uid://bjpki44xtcce4" path="res://obstacle.tscn" id="2_rfuc3"]
+[ext_resource type="PackedScene" uid="uid://bjpki44xtcce4" path="res://Scenes/obstacle.tscn" id="2_rfuc3"]
 [ext_resource type="Texture2D" uid="uid://nvgh3jj5qaau" path="res://Assets/Scenery/TreeLessObvious.png" id="2_xk1oi"]
 [ext_resource type="Texture2D" uid="uid://c4cygj0c4vhim" path="res://Tilesheets/tileset-export.png" id="3_hunr7"]
 [ext_resource type="Texture2D" uid="uid://crkb36gt47t3k" path="res://Assets/Scenery/TreeNumberTwo_1.png" id="5_3auau"]
