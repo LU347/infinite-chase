@@ -68,6 +68,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6hs5v")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(47.96, 11.76)
+color = Color(0.551133, 0.874421, 0.948408, 1)
+
 [node name="Platform" parent="." instance=ExtResource("2_04fxc")]
 VELOCITY = -0.5
 
