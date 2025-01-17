@@ -5,11 +5,8 @@ signal start_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	$RestartButton.hide()
+	$QuitButton.hide()
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
@@ -29,15 +26,20 @@ func print_countdown():
 #TODO: Return to title scene
 func show_game_over():
 	show_message("Game Over")
-
 	await $MessageTimer.timeout
-
 	$Message.text = "Infinite Chase"
 	$Message.show()
 
 	#Creates a one-shot timer and waits for it to finish
 	await get_tree().create_timer(1.0).timeout
-	$StartButton.show()
+	$RestartButton.show()
+	$QuitButton.show()
 
 func _on_message_timer_timeout() -> void:
 	$Message.hide()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+func _on_restart_button_pressed() -> void:
+	start_game.emit()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt0maksfuhyby"]
+[gd_scene load_steps=7 format=3 uid="uid://dt0maksfuhyby"]
 
 [ext_resource type="Script" path="res://Scripts/sound_manager.gd" id="1_ut226"]
 [ext_resource type="AudioStream" uid="uid://brpsxpsuhm618" path="res://Assets/Sounds/damage.wav" id="2_hn6i3"]
 [ext_resource type="AudioStream" uid="uid://dua8k1dmdjxw7" path="res://Assets/Sounds/jump.wav" id="2_rjgtp"]
 [ext_resource type="AudioStream" uid="uid://x8fy1qfc4664" path="res://Assets/Sounds/titleScreen.mp3" id="4_7y60g"]
 [ext_resource type="AudioStream" uid="uid://dx4b8g6i8vcby" path="res://Assets/Sounds/mainGame.wav" id="4_r1rpf"]
+[ext_resource type="AudioStream" uid="uid://dxguh0rgpaqh2" path="res://Assets/Sounds/gameOver.wav" id="5_bvlcd"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_ut226")
@@ -17,6 +18,10 @@ stream = ExtResource("2_rjgtp")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_r1rpf")
+volume_db = -10.801
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bvlcd")
 volume_db = -10.801
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]

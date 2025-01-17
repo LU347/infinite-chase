@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0kchyh566ct"]
+[gd_scene load_steps=4 format=3 uid="uid://d0kchyh566ct"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_dpunf"]
+[ext_resource type="Texture2D" uid="uid://debso01fuxgnk" path="res://Assets/HUD/woodenSignNoLight.png" id="2_71v2v"]
+[ext_resource type="Texture2D" uid="uid://crehd7ycfsmw2" path="res://Assets/HUD/woodenSignHover.png" id="3_4gpu0"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_dpunf")
@@ -38,4 +40,57 @@ autowrap_mode = 2
 
 [node name="MessageTimer" type="Timer" parent="."]
 
+[node name="RestartButton" type="TextureButton" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_71v2v")
+texture_hover = ExtResource("3_4gpu0")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="RestartButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 61.0
+offset_bottom = 24.0
+text = "Restart"
+
+[node name="QuitButton" type="TextureButton" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 14.0
+offset_right = 32.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_71v2v")
+texture_hover = ExtResource("3_4gpu0")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="QuitButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 61.0
+offset_bottom = 24.0
+text = "Quit"
+horizontal_alignment = 1
+
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

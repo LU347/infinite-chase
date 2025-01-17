@@ -8,13 +8,8 @@ var score = 0
 func _ready() -> void:
 	new_game()
 
-#TODO: stop obstacle spawner
-func game_over() -> void:
-	$HUD.show_game_over()
-	$ScoreTimer.stop()
-
 # Resets the score to 0, shows the get ready message, and starts platform movement and enemy spawners
-func new_game():
+func new_game() -> void:
 	score = 0
 
 	$HUD.update_score(score)
@@ -27,6 +22,17 @@ func new_game():
 	$Capy.start($SpawnLocation.position)
 	$ScoreTimer.start()
 	$SoundManager.play_sound("game")
+
+#TODO: stop obstacle spawner
+# stop platforms
+# hide player
+# delete all obstacles
+func game_over() -> void:
+	$HUD.show_game_over()
+	$ScoreTimer.stop()
+	$SoundManager.stop_sound()
+	$SoundManager.play_sound("game_end")
+	$Capy.hide()
 
 func _on_score_timer_timeout() -> void:
 	score += 1
