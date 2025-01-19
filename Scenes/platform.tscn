@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://dup4yhwe2flqp"]
+[gd_scene load_steps=9 format=4 uid="uid://dup4yhwe2flqp"]
 
 [ext_resource type="Script" path="res://Scripts/platform.gd" id="1_p36c4"]
 [ext_resource type="PackedScene" uid="uid://bjpki44xtcce4" path="res://Scenes/obstacle.tscn" id="2_rfuc3"]
-[ext_resource type="Texture2D" uid="uid://bipemkudulhkl" path="res://Assets/Scenery/tree-3.png" id="3_g5y4u"]
+[ext_resource type="Texture2D" uid="uid://bipemkudulhkl" path="res://Assets/Scenery/tree.png" id="3_g5y4u"]
+[ext_resource type="Texture2D" uid="uid://c5egiljcgj7b" path="res://Assets/Scenery/tree-2.png" id="4_iy8ai"]
 [ext_resource type="Texture2D" uid="uid://d2mh3cg8di3fg" path="res://Tilesheets/tileset-export (2).png" id="5_4dpu8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_477v2"]
@@ -61,14 +62,14 @@ modulate = Color(1, 0.979, 0.93, 1)
 texture_filter = 1
 position = Vector2(-0.205208, -2.21777)
 scale = Vector2(0.00400391, 0.108567)
-texture = ExtResource("3_g5y4u")
+texture = ExtResource("4_iy8ai")
 
 [node name="Tree4" type="Sprite2D" parent="Sprite"]
 modulate = Color(1, 0.979, 0.93, 1)
 texture_filter = 1
 position = Vector2(0.196875, -2.21777)
 scale = Vector2(0.00400391, 0.108567)
-texture = ExtResource("3_g5y4u")
+texture = ExtResource("4_iy8ai")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Sprite"]
 texture_filter = 1
@@ -83,6 +84,36 @@ position = Vector2(0.5, -0.454)
 [node name="Sprite2" type="Sprite2D" parent="."]
 position = Vector2(2850, 34)
 scale = Vector2(1920, 74.85)
+
+[node name="Tree" type="Sprite2D" parent="Sprite2"]
+texture_filter = 1
+position = Vector2(-0.385457, -1.9963)
+scale = Vector2(0.00338287, 0.0958728)
+texture = ExtResource("4_iy8ai")
+
+[node name="Tree2" type="Sprite2D" parent="Sprite2"]
+texture_filter = 1
+position = Vector2(-0.201082, -1.9963)
+scale = Vector2(0.00338287, 0.0958728)
+texture = ExtResource("4_iy8ai")
+
+[node name="Tree5" type="Sprite2D" parent="Sprite2"]
+texture_filter = 1
+position = Vector2(0.182251, -1.9963)
+scale = Vector2(0.00338287, 0.0958728)
+texture = ExtResource("4_iy8ai")
+
+[node name="Tree3" type="Sprite2D" parent="Sprite2"]
+texture_filter = 1
+position = Vector2(-0.000561476, -2.29022)
+scale = Vector2(0.0045912, 0.114042)
+texture = ExtResource("3_g5y4u")
+
+[node name="Tree4" type="Sprite2D" parent="Sprite2"]
+texture_filter = 1
+position = Vector2(0.357251, -2.29022)
+scale = Vector2(0.0045912, 0.114042)
+texture = ExtResource("3_g5y4u")
 
 [node name="PlatformTip" type="Node2D" parent="Sprite2"]
 position = Vector2(0.5, -0.454)

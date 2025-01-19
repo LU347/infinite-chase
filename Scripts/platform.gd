@@ -14,14 +14,13 @@ func _process(delta: float) -> void:
 				continue
 			_move_sprite(child, delta)
 
-func _move_sprite(sprite: Sprite2D,_delta: float) -> void:
+func _move_sprite(sprite: Sprite2D, _delta: float) -> void:
 	#var texture_width = sprite.texture.get_size().x * sprite.scale.x
 	var platform = sprite.get_node("PlatformTip")
 	sprite.position.x += VELOCITY
 
 	if platform.global_position.x <= $EndPosition.global_position.x:
 		sprite.position.x = $SpawnPosition.position.x
-
 
 func _on_main_start_game_objects() -> void:
 	can_move = true
