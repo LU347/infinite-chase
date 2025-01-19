@@ -55,7 +55,11 @@ shape = SubResource("RectangleShape2D_h6sll")
 [node name="SoundManager" parent="." instance=ExtResource("8_lktrt")]
 
 [connection signal="start_game_objects" from="." to="Platform" method="_on_main_start_game_objects"]
+[connection signal="start_game_objects" from="." to="Capy" method="_on_main_start_game_objects"]
 [connection signal="start_game_objects" from="." to="ObstacleSpawner" method="_on_main_start_game_objects"]
+[connection signal="stop_game_objects" from="." to="Platform" method="_on_main_stop_game_objects"]
+[connection signal="stop_game_objects" from="." to="Capy" method="_on_main_stop_game_objects"]
+[connection signal="stop_game_objects" from="." to="ObstacleSpawner" method="_on_main_stop_game_objects"]
 [connection signal="hit" from="Capy" to="." method="game_over"]
 [connection signal="timeout" from="ObstacleSpawner/SpawnTimer" to="ObstacleSpawner" method="_on_spawn_timer_timeout"]
 [connection signal="body_entered" from="GarbadeCollector" to="GarbadeCollector" method="_on_body_entered"]

@@ -13,6 +13,7 @@ const JUMP_STRENGTH = -600.0    # Adjust for stronger or weaker jumps
 const MAX_SPEED = 200.0
 
 var is_on_floor = false
+var can_move = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,9 @@ func _ready() -> void:
 
 # Called every physics frame. Use this for movement and physics updates.
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		return
+	
 	# Apply gravity if not on the floor
 	if not is_on_floor:
 		velocity.y += PLAYER_GRAVITY * delta
@@ -73,3 +77,9 @@ func start(pos: Vector2) -> void:
 	position = pos  # Ensure this position is above floor_y for jumping
 	show()
 	$CollisionShape2D.disabled = false
+
+func _on_main_start_game_objects() -> void:
+	can_move = true
+
+func _on_main_stop_game_objects() -> void:
+	can_move = false

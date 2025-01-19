@@ -16,6 +16,11 @@ func show_message(text):
 	$Message.show()
 	$MessageTimer.start()
 
+func hide_HUD():
+	$Message.hide()
+	$RestartButton.hide()
+	$QuitButton.hide()
+
 func print_countdown():
 	var start_message = ["3", "2", "1", "Go!"]
 	for message in start_message:
@@ -27,7 +32,6 @@ func print_countdown():
 func show_game_over():
 	show_message("Game Over")
 	await $MessageTimer.timeout
-	$Message.text = "Infinite Chase"
 	$Message.show()
 
 	#Creates a one-shot timer and waits for it to finish
@@ -42,4 +46,5 @@ func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
 func _on_restart_button_pressed() -> void:
+	hide_HUD()
 	start_game.emit()

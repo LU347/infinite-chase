@@ -1,6 +1,7 @@
 extends Node2D
 
 signal start_game_objects
+signal stop_game_objects
 
 var score = 0
 
@@ -12,27 +13,29 @@ func _ready() -> void:
 func new_game() -> void:
 	score = 0
 
+	$Capy.hide()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready!")
-	$Capy.hide()
 
 	await $HUD.print_countdown()
 
 	start_game_objects.emit() #This should start the platform and spawners
+
 	$Capy.start($SpawnLocation.position)
 	$ScoreTimer.start()
 	$SoundManager.play_sound("game")
 
-#TODO: stop obstacle spawner
-# stop platforms
-# hide player
-# delete all obstacles
+#TODO:
+# Save high score
 func game_over() -> void:
-	$HUD.show_game_over()
+	stop_game_objects.emit() #This should stop the platform and spawners
+
 	$ScoreTimer.stop()
+	$Capy.hide()
+	$HUD.show_game_over()
+
 	$SoundManager.stop_sound()
 	$SoundManager.play_sound("game_end")
-	$Capy.hide()
 
 func _on_score_timer_timeout() -> void:
 	score += 1

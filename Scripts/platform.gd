@@ -24,3 +24,6 @@ func _move_sprite(sprite: Sprite2D, _delta: float) -> void:
 
 func _on_main_start_game_objects() -> void:
 	can_move = true
+
+func _on_main_stop_game_objects() -> void:
+	can_move = false
