@@ -1,11 +1,12 @@
 extends Area2D
 
-signal hit
+signal game_over 
 
 var speed = 400
 var screen_size: Vector2
 var velocity = Vector2.ZERO
 var floor_y = 420
+var num_lives = 3
 
 # Constants for jumping mechanics
 const PLAYER_GRAVITY = 1500 # Adjust this value as needed for more realistic gravity
@@ -68,12 +69,18 @@ func _physics_process(delta: float) -> void:
 # Player collides with an obstacle
 func _on_body_entered(_body: Node2D) -> void:
 	$SoundManager.play_sound("damage")
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
+	num_lives -= 1
+	
+	if num_lives <= 0:	
+		print("game_over")
+		game_over.emit()  #TODO: Change to game_over signal
+		hide()
+		$CollisionShape2D.set_deferred("disabled", true)
+
 
 # Function to start the player at a specific position
 func start(pos: Vector2) -> void:
+	num_lives = 3
 	position = pos  # Ensure this position is above floor_y for jumping
 	show()
 	$CollisionShape2D.disabled = false
