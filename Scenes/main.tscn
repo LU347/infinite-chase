@@ -61,6 +61,7 @@ shape = SubResource("RectangleShape2D_h6sll")
 [connection signal="stop_game_objects" from="." to="Capy" method="_on_main_stop_game_objects"]
 [connection signal="stop_game_objects" from="." to="ObstacleSpawner" method="_on_main_stop_game_objects"]
 [connection signal="game_over" from="Capy" to="." method="game_over"]
+[connection signal="num_lives_changed" from="Capy" to="HUD" method="_on_capy_num_lives_changed"]
 [connection signal="timeout" from="ObstacleSpawner/SpawnTimer" to="ObstacleSpawner" method="_on_spawn_timer_timeout"]
 [connection signal="body_entered" from="GarbadeCollector" to="GarbadeCollector" method="_on_body_entered"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

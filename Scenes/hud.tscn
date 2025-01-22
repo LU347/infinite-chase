@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0kchyh566ct"]
+[gd_scene load_steps=5 format=3 uid="uid://d0kchyh566ct"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_dpunf"]
 [ext_resource type="Texture2D" uid="uid://debso01fuxgnk" path="res://Assets/HUD/woodenSignNoLight.png" id="2_71v2v"]
 [ext_resource type="Texture2D" uid="uid://crehd7ycfsmw2" path="res://Assets/HUD/woodenSignHover.png" id="3_4gpu0"]
+[ext_resource type="Texture2D" uid="uid://bfd4wv1esb188" path="res://Assets/HUD/HeartFull_1.png" id="4_6axr1"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_dpunf")
@@ -90,6 +91,32 @@ offset_right = 61.0
 offset_bottom = 24.0
 text = "Quit"
 horizontal_alignment = 1
+
+[node name="HeartsContainer" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="HeartsContainer"]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = ExtResource("4_6axr1")
+
+[node name="TextureRect2" type="TextureRect" parent="HeartsContainer"]
+texture_filter = 1
+offset_left = 65.0
+offset_top = 20.0
+offset_right = 105.0
+offset_bottom = 60.0
+texture = ExtResource("4_6axr1")
+
+[node name="TextureRect3" type="TextureRect" parent="HeartsContainer"]
+texture_filter = 1
+offset_left = 110.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 60.0
+texture = ExtResource("4_6axr1")
 
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

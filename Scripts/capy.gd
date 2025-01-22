@@ -1,6 +1,7 @@
 extends Area2D
 
-signal game_over 
+signal game_over
+signal num_lives_changed(num_lives: int)
 
 var speed = 400
 var screen_size: Vector2
@@ -70,6 +71,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(_body: Node2D) -> void:
 	$SoundManager.play_sound("damage")
 	num_lives -= 1
+	num_lives_changed.emit(num_lives)
 	
 	if num_lives <= 0:	
 		print("game_over")

@@ -48,3 +48,14 @@ func _on_quit_button_pressed() -> void:
 func _on_restart_button_pressed() -> void:
 	hide_HUD()
 	start_game.emit()
+
+func _on_capy_num_lives_changed(num_lives:Variant) -> void:
+	var curr_lives = num_lives
+
+	for heart in $HeartsContainer.get_children():
+		if curr_lives > 0:
+			heart.texture = load("res://Assets/HUD/HeartFull_1.png")
+		else:
+			heart.texture = load("res://Assets/HUD/HeartEmptyGlass.png")
+		curr_lives -= 1
+
