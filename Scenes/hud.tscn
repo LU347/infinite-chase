@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0kchyh566ct"]
+[gd_scene load_steps=6 format=3 uid="uid://d0kchyh566ct"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_dpunf"]
 [ext_resource type="Texture2D" uid="uid://debso01fuxgnk" path="res://Assets/HUD/woodenSignNoLight.png" id="2_71v2v"]
+[ext_resource type="FontFile" uid="uid://c4nonffkvl4n7" path="res://Assets/HUD/PeaberryMono.ttf" id="2_go4bo"]
 [ext_resource type="Texture2D" uid="uid://crehd7ycfsmw2" path="res://Assets/HUD/woodenSignHover.png" id="3_4gpu0"]
 [ext_resource type="Texture2D" uid="uid://bfd4wv1esb188" path="res://Assets/HUD/HeartFull_1.png" id="4_6axr1"]
 
@@ -9,19 +10,24 @@
 script = ExtResource("1_dpunf")
 
 [node name="ScoreLabel" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -55.0
-offset_right = 55.0
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -167.0
 offset_bottom = 88.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
-text = "0
+grow_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_go4bo")
+theme_override_font_sizes/font_size = 35
+text = "00000
 "
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Message" type="Label" parent="."]
+texture_filter = 1
 custom_minimum_size = Vector2(480, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,6 +40,9 @@ offset_right = 212.5
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_go4bo")
 theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -96,25 +105,25 @@ horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HeartsContainer"]
 texture_filter = 1
-offset_left = 20.0
+offset_left = 29.0
 offset_top = 20.0
-offset_right = 60.0
+offset_right = 69.0
 offset_bottom = 60.0
 texture = ExtResource("4_6axr1")
 
 [node name="TextureRect2" type="TextureRect" parent="HeartsContainer"]
 texture_filter = 1
-offset_left = 65.0
+offset_left = 74.0
 offset_top = 20.0
-offset_right = 105.0
+offset_right = 114.0
 offset_bottom = 60.0
 texture = ExtResource("4_6axr1")
 
 [node name="TextureRect3" type="TextureRect" parent="HeartsContainer"]
 texture_filter = 1
-offset_left = 110.0
+offset_left = 119.0
 offset_top = 20.0
-offset_right = 150.0
+offset_right = 159.0
 offset_bottom = 60.0
 texture = ExtResource("4_6axr1")
 

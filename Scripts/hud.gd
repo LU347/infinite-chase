@@ -9,7 +9,12 @@ func _ready() -> void:
 	$QuitButton.hide()
 
 func update_score(score):
-	$ScoreLabel.text = str(score)
+	if score < 10:
+		$ScoreLabel.text = "0000" + str(score)
+	elif score < 100:
+		$ScoreLabel.text = "000" + str(score)
+	else:
+		$ScoreLabel.text = str(score)
 
 func show_message(text):
 	$Message.text = text
