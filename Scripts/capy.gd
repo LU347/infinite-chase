@@ -3,24 +3,39 @@ extends Area2D
 signal game_over
 signal num_lives_changed(num_lives: int)
 
-var speed = 400
-var screen_size: Vector2
-var velocity = Vector2.ZERO
-var floor_y = 420
-var num_lives = 3
+var SCREEN_SIZE: Vector2
 
 # Constants for jumping mechanics
 const PLAYER_GRAVITY = 1500 # Adjust this value as needed for more realistic gravity
 const JUMP_STRENGTH = -600.0    # Adjust for stronger or weaker jumps
 const MAX_SPEED = 200.0
+var FLOOR_Y = 420
 
+# Constants for player health
+var DEFAULT_LIVES = 3
+
+# Booleans for player states
 var is_on_floor = false
 var can_move = false
+var is_paused = false
+
+# Movement variables
+var speed = 400
+var velocity = Vector2.ZERO
+
+# Health
+var num_lives = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	screen_size = get_viewport_rect().size
-	print("Initial Position:", position)
+	SCREEN_SIZE = get_viewport_rect().size
+
+# Function to start the player at a specific position
+func start(pos: Vector2) -> void:
+	update_lives(DEFAULT_LIVES)
+	position = pos  # Ensure this position is above floor_y for jumping
+	show()
+	$CollisionShape2D.disabled = false
 
 # Called every physics frame. Use this for movement and physics updates.
 func _physics_process(delta: float) -> void:
@@ -40,8 +55,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 
 	# Floor collision logic
-	if position.y >= floor_y:
-		position.y = floor_y
+	if position.y >= FLOOR_Y:
+		position.y = FLOOR_Y
 		velocity.y = 0
 		is_on_floor = true
 	
@@ -55,7 +70,7 @@ func _physics_process(delta: float) -> void:
 	position += velocity * delta
 	
 	# Keep player within screen bounds
-	position = position.clamp(Vector2.ZERO, screen_size)
+	position = position.clamp(Vector2.ZERO, SCREEN_SIZE)
 
 	# Animation logic
 	if velocity.x != 0:
@@ -70,22 +85,17 @@ func _physics_process(delta: float) -> void:
 # Player collides with an obstacle
 func _on_body_entered(_body: Node2D) -> void:
 	$SoundManager.play_sound("damage")
-	num_lives -= 1
-	num_lives_changed.emit(num_lives)
+
+	update_lives(num_lives-1)
 	
 	if num_lives <= 0:	
-		print("game_over")
 		game_over.emit()  #TODO: Change to game_over signal
 		hide()
 		$CollisionShape2D.set_deferred("disabled", true)
 
-
-# Function to start the player at a specific position
-func start(pos: Vector2) -> void:
-	num_lives = 3
-	position = pos  # Ensure this position is above floor_y for jumping
-	show()
-	$CollisionShape2D.disabled = false
+func update_lives(new_num):
+	num_lives = new_num
+	num_lives_changed.emit(num_lives)
 
 func _on_main_start_game_objects() -> void:
 	can_move = true

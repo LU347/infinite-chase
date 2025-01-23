@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0kchyh566ct"]
+[gd_scene load_steps=7 format=3 uid="uid://d0kchyh566ct"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_dpunf"]
 [ext_resource type="Texture2D" uid="uid://debso01fuxgnk" path="res://Assets/HUD/woodenSignNoLight.png" id="2_71v2v"]
 [ext_resource type="FontFile" uid="uid://c4nonffkvl4n7" path="res://Assets/HUD/PeaberryMono.ttf" id="2_go4bo"]
 [ext_resource type="Texture2D" uid="uid://crehd7ycfsmw2" path="res://Assets/HUD/woodenSignHover.png" id="3_4gpu0"]
 [ext_resource type="Texture2D" uid="uid://bfd4wv1esb188" path="res://Assets/HUD/HeartFull_1.png" id="4_6axr1"]
+[ext_resource type="FontFile" uid="uid://ckpkcjtfu35nc" path="res://Assets/HUD/joystix monospace.otf" id="5_bdqwx"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_dpunf")
@@ -68,12 +69,17 @@ texture_hover = ExtResource("3_4gpu0")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="RestartButton"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 4.0
 offset_top = 1.0
 offset_right = 61.0
 offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("5_bdqwx")
+theme_override_font_sizes/font_size = 10
 text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="QuitButton" type="TextureButton" parent="."]
 texture_filter = 1
@@ -93,13 +99,17 @@ texture_hover = ExtResource("3_4gpu0")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="QuitButton"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 4.0
 offset_top = 1.0
 offset_right = 61.0
 offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("5_bdqwx")
+theme_override_font_sizes/font_size = 12
 text = "Quit"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HeartsContainer" type="Node" parent="."]
 

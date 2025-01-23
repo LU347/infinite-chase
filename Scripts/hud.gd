@@ -13,6 +13,8 @@ func update_score(score):
 		$ScoreLabel.text = "0000" + str(score)
 	elif score < 100:
 		$ScoreLabel.text = "000" + str(score)
+	elif score < 1000:
+		$ScoreLabel.text = "00" + str(score)
 	else:
 		$ScoreLabel.text = str(score)
 

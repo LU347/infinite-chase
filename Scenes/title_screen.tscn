@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://d302d853vjtdc"]
+[gd_scene load_steps=17 format=3 uid="uid://d302d853vjtdc"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_6hs5v"]
 [ext_resource type="PackedScene" uid="uid://dup4yhwe2flqp" path="res://Scenes/platform.tscn" id="2_04fxc"]
+[ext_resource type="Texture2D" uid="uid://xritsdiq6thm" path="res://Assets/HUD/GeneralBackground.png" id="2_hrprf"]
 [ext_resource type="FontFile" uid="uid://ckpkcjtfu35nc" path="res://Assets/HUD/joystix monospace.otf" id="3_tlrra"]
 [ext_resource type="Texture2D" uid="uid://bfv57pq1h3m7c" path="res://Spritesheets/capy_run-2-sheet.png" id="4_q88wb"]
 [ext_resource type="Script" path="res://Scripts/animated_sprite_2d.gd" id="5_aqa58"]
@@ -68,12 +69,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6hs5v")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
+modulate = Color(0.980392, 1, 0.933333, 1)
+texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(47.96, 11.76)
-color = Color(0.551133, 0.874421, 0.948408, 1)
+offset_left = -13.0
+offset_top = -6.0
+offset_right = 246.0
+offset_bottom = 250.0
+scale = Vector2(7.47527, 6.24547)
+mouse_filter = 2
+texture = ExtResource("2_hrprf")
 
 [node name="Platform" parent="." instance=ExtResource("2_04fxc")]
 VELOCITY = -0.5
@@ -85,17 +91,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -145.0
-offset_right = 471.0
-offset_bottom = -73.0
+offset_left = -220.0
+offset_top = -225.0
+offset_right = 476.0
+offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.640002, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("3_tlrra")
 theme_override_font_sizes/font_size = 60
-text = "Infinite Chase"
+text = "Infinite 
+Chase"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
