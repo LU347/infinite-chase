@@ -81,8 +81,6 @@ func _physics_process(delta: float) -> void:
 	
 	$AnimatedSprite2D.play()
 
-#TODO: Implement health system
-# Player collides with an obstacle
 func _on_body_entered(_body: Node2D) -> void:
 	$SoundManager.play_sound("damage")
 

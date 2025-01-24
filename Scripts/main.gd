@@ -3,18 +3,23 @@ extends Node2D
 signal start_game_objects
 signal stop_game_objects
 
-var score = 0
+var player_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	new_game()
+	start_game()
+
+func _process(_delta: float):
+	if Input.is_action_pressed("pause"):
+		pause_game()
+		$HUD.show_menu()
 
 # Resets the score to 0, shows the get ready message, and starts platform movement and enemy spawners
-func new_game() -> void:
-	score = 0
+func start_game() -> void:
+	player_score = 0
 
 	$Capy.hide()
-	$HUD.update_score(score)
+	$HUD.update_score(player_score)
 	$HUD.show_message("Get Ready!")
 
 	await $HUD.print_countdown()
@@ -25,6 +30,16 @@ func new_game() -> void:
 	$ScoreTimer.start()
 	$SoundManager.play_sound("game")
 
+# Increments the player score every second
+func _on_score_timer_timeout() -> void:
+	player_score += 1
+	$HUD.update_score(player_score)
+
+func pause_game() -> void:
+	get_tree().paused = true
+
+func resume_game() -> void:
+	get_tree().paused = false
 #TODO:
 # Save high score
 func game_over() -> void:
@@ -36,7 +51,3 @@ func game_over() -> void:
 
 	$SoundManager.stop_sound()
 	$SoundManager.play_sound("game_end")
-
-func _on_score_timer_timeout() -> void:
-	score += 1
-	$HUD.update_score(score)
