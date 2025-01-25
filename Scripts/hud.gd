@@ -1,10 +1,10 @@
 extends CanvasLayer
 
-#Notifies the main scene when the button is pressed
-signal start_game
-
 @export var ScoreLabel: Label
 @export var HeartsContainer: Node
+@export var ResumeButton: TextureButton
+@export var RestartButton: TextureButton
+@export var MessageTimer: Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,29 +24,34 @@ func show_menu():
 func show_message(text):
 	$MessageLabel.text = text
 	$MessageLabel.show()
-	$MessageTimer.start()
+	MessageTimer.start()
 
 func _on_message_timer_timeout() -> void:
 	$MessageLabel.hide()
 
 func show_game_over():
 	show_message("Game Over")
-	await $MessageTimer.timeout
+	await MessageTimer.timeout
 	$MessageLabel.show()
 
 	#Creates a one-shot timer and waits for it to finish
 	await get_tree().create_timer(1.0).timeout
 	$Menu.show()
+	ResumeButton.hide()
+	RestartButton.show()
 
 # Menu Buttons
+func _on_resume_button_pressed() -> void:
+	get_tree().paused = false
+	$Menu.hide()
+
+func _on_restart_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
-
-# TODO:
-# This should be connected to the Main function instead
-func _on_restart_button_pressed() -> void:
-	$Menu.hide()
-	start_game.emit() 
+	print("quit clicked")
 
 # Player Status UI (Score & Health)
 func update_score(score):
