@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var obstacle_scene: PackedScene
+
 var obstacles = []
 
 func _on_spawn_timer_timeout() -> void:

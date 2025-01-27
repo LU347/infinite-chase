@@ -10,7 +10,7 @@ extends CanvasLayer
 func _ready() -> void:
 	$Menu.hide()
 
-func print_countdown():
+func print_countdown() -> void:
 	var start_message = ["3", "2", "1", "Go!"]
 	for message in start_message:
 		await get_tree().create_timer(1.0).timeout
@@ -21,7 +21,7 @@ func show_menu():
 	$MessageLabel.hide()
 
 # Game Status Messages
-func show_message(text):
+func show_message(text: String) -> void:
 	$MessageLabel.text = text
 	$MessageLabel.show()
 	MessageTimer.start()
@@ -29,7 +29,7 @@ func show_message(text):
 func _on_message_timer_timeout() -> void:
 	$MessageLabel.hide()
 
-func show_game_over():
+func show_game_over() -> void:
 	show_message("Game Over")
 	await MessageTimer.timeout
 	$MessageLabel.show()
@@ -54,7 +54,7 @@ func _on_quit_button_pressed() -> void:
 	print("quit clicked")
 
 # Player Status UI (Score & Health)
-func update_score(score):
+func update_score(score: int) -> void:
 	if score < 10:
 		ScoreLabel.text = "0000" + str(score)
 	elif score < 100:
@@ -65,7 +65,7 @@ func update_score(score):
 		ScoreLabel.text = str(score)
 
 # Updates the heart texture to display the player's current number of lives
-func _on_capy_num_lives_changed(num_lives:Variant) -> void:
+func _on_capy_num_lives_changed(num_lives: int) -> void:
 	var curr_lives = num_lives
 	for heart in HeartsContainer.get_children():
 		if curr_lives > 0:

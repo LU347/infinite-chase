@@ -6,25 +6,25 @@ signal num_lives_changed(num_lives: int)
 var SCREEN_SIZE: Vector2
 
 # Constants for jumping mechanics
-const PLAYER_GRAVITY = 1500 # Adjust this value as needed for more realistic gravity
-const JUMP_STRENGTH = -600.0    # Adjust for stronger or weaker jumps
-const MAX_SPEED = 200.0
-var FLOOR_Y = 420
+const PLAYER_GRAVITY: int = 1500 # Adjust this value as needed for more realistic gravity
+const JUMP_STRENGTH: float = -600.0    # Adjust for stronger or weaker jumps
+const MAX_SPEED: float= 200.0
+var FLOOR_Y: int = 420
 
 # Constants for player health
-var DEFAULT_LIVES = 3
+var DEFAULT_LIVES: int = 3
 
 # Booleans for player states
-var is_on_floor = false
-var can_move = false
-var is_paused = false
+var is_on_floor: bool = false
+var can_move: bool = false
+var is_paused: bool = false
 
 # Movement variables
-var speed = 400
-var velocity = Vector2.ZERO
+var speed: int = 400
+var velocity: Vector2 = Vector2.ZERO
 
 # Health
-var num_lives = 3
+var num_lives: int = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -91,7 +91,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		hide()
 		$CollisionShape2D.set_deferred("disabled", true)
 
-func update_lives(new_num):
+func update_lives(new_num) -> void:
 	num_lives = new_num
 	num_lives_changed.emit(num_lives)
 
