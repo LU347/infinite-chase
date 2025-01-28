@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d302d853vjtdc"]
+[gd_scene load_steps=18 format=3 uid="uid://d302d853vjtdc"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_6hs5v"]
 [ext_resource type="PackedScene" uid="uid://dup4yhwe2flqp" path="res://Scenes/platform.tscn" id="2_04fxc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://debso01fuxgnk" path="res://Assets/HUD/woodenSignNoLight.png" id="6_fosjr"]
 [ext_resource type="Texture2D" uid="uid://crehd7ycfsmw2" path="res://Assets/HUD/woodenSignHover.png" id="7_1dgxg"]
 [ext_resource type="PackedScene" uid="uid://dt0maksfuhyby" path="res://Scenes/sound_manager.tscn" id="8_sy1a4"]
+[ext_resource type="FontFile" uid="uid://c4nonffkvl4n7" path="res://Assets/HUD/PeaberryMono.ttf" id="9_sms5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tl00"]
 atlas = ExtResource("4_q88wb")
@@ -118,6 +119,7 @@ frame_progress = 0.248967
 script = ExtResource("5_aqa58")
 
 [node name="LoginButton" type="TextureButton" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -217,6 +219,22 @@ theme_override_font_sizes/normal_font_size = 14
 text = "Quit
 "
 fit_content = true
+
+[node name="QuitButton2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 94.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("9_sms5a")
+text = " V1.0.0"
 
 [node name="SoundManager" parent="." instance=ExtResource("8_sy1a4")]
 
