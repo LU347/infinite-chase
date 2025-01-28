@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjpki44xtcce4"]
 
 [ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_txef3"]
+[ext_resource type="Texture2D" uid="uid://1gswwpsapocg" path="res://Assets/Obstacles/spikes-export.png" id="2_iklnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1tia"]
 size = Vector2(46, 74.9637)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2i7tk"]
-load_path = "res://.godot/imported/spikes-export.png-19cdeede6a9e11c0aae7ef9c1512dff9.ctex"
 
 [node name="Obstacle" type="RigidBody2D"]
 collision_mask = 0
@@ -25,6 +23,6 @@ scale = Vector2(2.3, 4.3)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.89, 2.67196)
-texture = SubResource("CompressedTexture2D_2i7tk")
+texture = ExtResource("2_iklnl")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
