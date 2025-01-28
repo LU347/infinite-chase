@@ -1,6 +1,7 @@
 # Infinite Chase  
 A simple infinite-runner game created with **Godot 4**.
 
+
 <img width="600" alt="Infinite Chase Screenshot" src="https://github.com/user-attachments/assets/aeb1e8fd-3e9e-4549-a93f-eadbcbb926ba" />
 
 ---
@@ -27,7 +28,9 @@ I started this project with little experience in **Godot 4**, so I approached it
 Working on **Infinite Chase** taught me:  
 - **The basics of Godot's scripting language (GDScript)** and how it integrates with nodes and scenes.  
 - **Object-oriented design**: Breaking down the game into modular pieces made debugging and extending the game much easier.  
-- How small tweaks to game mechanics (like speed, obstacle spacing, etc.) can drastically impact how fun the game feels.  
+- How small tweaks to game mechanics (like speed, obstacle spacing, etc.) can drastically impact how fun the game feels.
+
+<img width="128" alt="Capybara" src="https://github.com/user-attachments/assets/b0c9302b-dfbc-4126-9c73-0e8370b4af31" />
 
 ---
 
