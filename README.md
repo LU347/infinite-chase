@@ -2,7 +2,7 @@
 A simple infinite-runner game created with **Godot 4**.
 
 
-<img width="600" alt="Infinite Chase Screenshot" src="https://github.com/user-attachments/assets/aeb1e8fd-3e9e-4549-a93f-eadbcbb926ba" />
+<img width="100%" alt="Infinite Chase Screenshot" src="https://github.com/user-attachments/assets/aeb1e8fd-3e9e-4549-a93f-eadbcbb926ba" />
 
 ---
 
