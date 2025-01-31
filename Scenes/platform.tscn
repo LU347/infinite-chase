@@ -129,7 +129,7 @@ tile_set = SubResource("TileSet_uuh5w")
 position = Vector2(1887, 0)
 
 [node name="EndPosition" type="Marker2D" parent="."]
-position = Vector2(-33, 0)
+position = Vector2(-74, 0)
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.5

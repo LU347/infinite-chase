@@ -220,7 +220,7 @@ text = "Quit
 "
 fit_content = true
 
-[node name="QuitButton2" type="Label" parent="."]
+[node name="VersionLabel" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 2
@@ -234,7 +234,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("9_sms5a")
-text = " V1.0.0"
+text = " V1.0.1
+"
 
 [node name="SoundManager" parent="." instance=ExtResource("8_sy1a4")]
 
